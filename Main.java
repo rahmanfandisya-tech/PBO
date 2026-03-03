@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
       
       
-        Kucing k1 = new Kucing();
+        Kucing k1 = new Kucing("mooly");
 
         k1.nama = "moly";
         String namakucing = k1.nama;
@@ -37,6 +37,24 @@ class Kucing{
     protected   String warna;
     private  int umur;
 
+
+Kucing(String nama){}
+
+    Kucing(String nama,String warna,int umur){
+
+        this.nama = nama;
+        this.warna = warna;
+        this.umur = umur;
+
+    }
+
+     Kucing(String nama,String warna){
+
+        this.nama = nama;
+        this.warna = warna;
+        this.umur = umur;
+
+    }
 
 public void setUmur(int umur) {
     this.umur = umur;
