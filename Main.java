@@ -6,28 +6,56 @@ import luar.semut;
 public class Main {
     public static void main(String[] args) {
       
-        Kendaraan mobil = new Kendaraan();
-
-        // Mengakses data Public & Protected
-        System.out.println("Merek: " + mobil.merek);
-        System.out.println("Tahun: " + mobil.tahun);
-
-        // Mengakses data Private
-        // System.out.println(mobil.nomorMesin); // <-- ERROR: Tidak bisa diakses langsung
-        mobil.tampilkanNomorMesin(); // Berhasil melalui method public
-
+      
         Kucing k1 = new Kucing();
 
         k1.nama = "moly";
+        String namakucing = k1.nama;
 
 
 
-        k1.setUmur(10);
-        v = k1.getUmur();
+
+        //k1.umur = 10;
+
+       k1.setUmur(10);
+        int umur = k1.getUmur();
 
 
     }
 }
+
+
+
+
+
+
+
+
+class Kucing{
+
+    public  String nama;
+    protected   String warna;
+    private  int umur;
+
+
+public void setUmur(int umur) {
+    this.umur = umur;
+}
+
+public int getUmur() {
+    return umur;
+}
+
+
+}
+
+
+class Persia extends Kucing{
+
+
+
+}
+
 
 
 
@@ -48,28 +76,3 @@ public class Main {
 //         System.out.println("Nomor Mesin (Private): " + nomorMesin);
 //     }
 // }
-
-
-class Kucing{
-
-    public  String nama;
-    protected   String warna;
-    private  int umur;
-
-public void setUmur(int umur) {
-    this.umur = umur;
-}
-public int getUmur() {
-    return umur;
-}
-
-
-
-}
-
-
-class Persia extends Kucing{
-
-
-
-}
