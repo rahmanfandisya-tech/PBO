@@ -1,3 +1,8 @@
+# Diagram Kelas: Sistem Ticketing (Soal 2)
+
+Diagram ini menggunakan konsep **Inheritance (Pewarisan)** dan **Polimorfisme**. [cite_start]Kelas `Tiket` didefinisikan sebagai kelas abstrak yang menjadi induk bagi jenis tiket lainnya.
+
+```mermaid
 classDiagram
     class Tiket {
         <<abstract>>
@@ -8,11 +13,15 @@ classDiagram
         +getTotalBayar()* double
         +getHarga() int
         +setHarga(int harga)
+        +getNomor() String
+        +setNomor(String nomor)
+        +getTanggal() String
+        +setTanggal(String tanggal)
     }
 
     class TiketPesawat {
         -double beratBagasi
-        +TiketPesawat(String nomor, String tanggal, int harga, double berat)
+        +TiketPesawat(String nomor, String tanggal, int harga, double beratBagasi)
         +getTotalBayar() double
     }
 
@@ -28,6 +37,6 @@ classDiagram
         +getTotalBayar() double
     }
 
-    Tiket <|-- TiketPesawat : is-a
-    Tiket <|-- TiketBioskop : is-a
-    Tiket <|-- TiketKereta : is-a
+    Tiket <|-- TiketPesawat : extends
+    Tiket <|-- TiketBioskop : extends
+    Tiket <|-- TiketKereta : extends
